@@ -29,7 +29,7 @@ module.exports = function (gu, opts) {
   const ignoreMax = opts.ignoreMax || 3600;
 
   gu.handle(/(.*)/, function (say, message, user) {
-    gu.log.info(user + ':', message);
+    gu.log.info(message);
     if (!protection.isIgnored(user)) {
       if (protection.isTooSimilar(user, message)) {
         protection.ignore(user, ignoreMax, gu.log);
